@@ -73,7 +73,7 @@ def generatelinks(url):
 	print(f"\n{success} Enumerating users using wp-json and info leaks")
 	print(f"{progress}{url}/wp-json/wp/v2/users  // View all users")
 	regex=r'grep -iEo "\"name\":\"[ _a-z0-9A-Z]+\"" | grep -iv "Archives" | sort -u'
-	print(f'{progress} curl {url}/wp-json/wp/v2/users | {regex}')
+	print(f'{progress} curl \"{url}/index.php/wp-json/wp/v2/users/?per_page=100&page=1\" | {regex}')
 
 	print(f"{progress}{url}/wp-json/wp/v2/users/1  // Fuzz the last value using burp of ffuf, some users may be hidden")
 	print(f"{progress}{url}/index.php/wp-json/wp/v2/users/?per_page=100&page=1 // Viewing all users")
