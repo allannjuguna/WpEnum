@@ -26,12 +26,13 @@ end="\033[0m"
 
 def banner():
 	banner="""
-██╗    ██╗██████╗ ██████╗ ███████╗ ██████╗ ██████╗ ███╗   ██╗
-██║    ██║██╔══██╗██╔══██╗██╔════╝██╔════╝██╔═══██╗████╗  ██║
-██║ █╗ ██║██████╔╝██████╔╝█████╗  ██║     ██║   ██║██╔██╗ ██║
-██║███╗██║██╔═══╝ ██╔══██╗██╔══╝  ██║     ██║   ██║██║╚██╗██║
-╚███╔███╔╝██║     ██║  ██║███████╗╚██████╗╚██████╔╝██║ ╚████║
- ╚══╝╚══╝ ╚═╝     ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝ v.1
+
+░██╗░░░░░░░██╗██████╗░███████╗███╗░░██╗██╗░░░██╗███╗░░░███╗
+░██║░░██╗░░██║██╔══██╗██╔════╝████╗░██║██║░░░██║████╗░████║
+░╚██╗████╗██╔╝██████╔╝█████╗░░██╔██╗██║██║░░░██║██╔████╔██║
+░░████╔═████║░██╔═══╝░██╔══╝░░██║╚████║██║░░░██║██║╚██╔╝██║
+░░╚██╔╝░╚██╔╝░██║░░░░░███████╗██║░╚███║╚██████╔╝██║░╚═╝░██║
+░░░╚═╝░░░╚═╝░░╚═╝░░░░░╚══════╝╚═╝░░╚══╝░╚═════╝░╚═╝░░░░░╚═╝ v.1
 
 					https://twitter.com/xubzer0
 	
@@ -41,14 +42,14 @@ def banner():
 
 def help():
 	options="""Usage:
-	wprecon https://url
+	wpenum https://url
 
 Examples:
-	wprecon https://example.com/                -- if the wordpress site is running on the '/' path
-	wprecon https://example.com/wordpress/      -- if the wordpress site is running on the '/wordpress' path
+   wpenum https://example.com/           -- if the wordpress site is running on the '/' path
+   wpenum https://example.com/wordpress/ -- if the wordpress site is running on the '/wordpress' path
 
 Description:
-	Simple program that automatically generates links that can guide you on how to recon and enumerate hardened wordpress installations
+   Simple script that automatically generates links that can guide you on how to recon and enumerate wordpress installations
 
 	"""
 	print(options) 
