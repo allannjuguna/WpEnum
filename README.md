@@ -8,6 +8,10 @@
 ░░░╚═╝░░░╚═╝░░╚═╝░░░░░╚══════╝╚═╝░░╚══╝░╚═════╝░╚═╝░░░░░╚═╝ v.1
 ```
 
+# Description
+* This is a collection of tricks and techniques that can be used to enumerate wordpress users,plugins,vulnerabilities etc, that i have collected after playing various ctfs,hackthebox,tryhackme and vulnhub boxes.
+
+
 # Usage
 	
 ```
