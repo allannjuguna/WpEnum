@@ -74,7 +74,7 @@ def generatelinks(url):
 	print(f"\n{success} Enumerating users using wp-json and info leaks")
 	print(f"{progress}{url}/wp-json/wp/v2/users  // View all users")
 	regex=r'grep -iEo "\"name\":\"[ _a-z0-9A-Z]+\"" | grep -iv "Archives" | sort -u'
-	print(f'{progress} curl \"{url}/index.php/wp-json/wp/v2/users/?per_page=100&page=1\" | {regex}')
+	print(f'{progress} curl -sk \"{url}/index.php/wp-json/wp/v2/users/?per_page=100&page=1\" | {regex}')
 
 	print(f"{progress}{url}/wp-json/wp/v2/users/1  // Fuzz the last value using burp of ffuf, some users may be hidden")
 	print(f"{progress}{url}/index.php/wp-json/wp/v2/users/?per_page=100&page=1 // Viewing all users")
@@ -85,10 +85,10 @@ def generatelinks(url):
 	# USING JSON AND LEAKS
 	print(f"\n{success} Enumerating users using comments,pages and posts")
 	regex=r'grep -iEo "\"author_name\":\"[ _a-z0-9A-Z]+\"" | sort -u'
-	print(f'{progress} curl {url}/wp-json/wp/v2/comments | {regex}')
+	print(f'{progress} curl -sk {url}/wp-json/wp/v2/comments | {regex}')
 	regex=r'grep -iEo "\/author\W\W[a-z]+" | sort -u'
-	print(f'{progress} curl {url}/wp-json/wp/v2/pages | {regex}')
-	print(f'{progress} curl {url}/wp-json/wp/v2/posts | {regex}')
+	print(f'{progress} curl -sk {url}/wp-json/wp/v2/pages | {regex}')
+	print(f'{progress} curl -sk {url}/wp-json/wp/v2/posts | {regex}')
 
 
 	# USING NMAP AND METASPLOIT
@@ -100,9 +100,9 @@ def generatelinks(url):
 	# USING USERID AND BRUTEFORCING IDS
 	print(f"\n{success} Enumerating users using userid")
 	regex=r'grep -iEo "\"author\":[ 0-9]+" | sort -u'
-	print(f'{progress} curl {url}/wp-json/wp/v2/comments | {regex} // Fetches user ids from comments'  )
-	print(f'{progress} curl {url}/wp-json/wp/v2/pages | {regex} // Fetches user ids from pages'  )
-	print(f'{progress} curl {url}/wp-json/wp/v2/posts | {regex} // Fetches user ids from pages'  )
+	print(f'{progress} curl -sk {url}/wp-json/wp/v2/comments | {regex} // Fetches user ids from comments'  )
+	print(f'{progress} curl -sk {url}/wp-json/wp/v2/pages | {regex} // Fetches user ids from pages'  )
+	print(f'{progress} curl -sk {url}/wp-json/wp/v2/posts | {regex} // Fetches user ids from pages'  )
 	print(f"{progress}{url}/?author=1  // Fuzz  1 using ffuf/burp") 
 	print(f"{progress}ffuf -c -r -recursion -w ~/wordlists/1-100.txt  -u \"{url}/?author=FUZZ\" -mc all -fc 404,403 -o users.out")
 	print(f"{progress}{url}/wp-json/wp/v2/users/1  // bruteforce the last value, some users may be hidden")
