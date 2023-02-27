@@ -44,9 +44,8 @@ Description:
 wpenum https://localhost/wordpress
 
 [+] -  Checking information leaks
-[*] - http://localhost/wordpress/?  => Check wordpress version
-[*] - http://localhost/wordpress/?static=1  => Information leak
-[*] - http://localhost/wordpress/?static=1&order=asc  => Information leak
+[*] - http://localhost/wordpress/?static=1  => Check Information leak
+[*] - http://localhost/wordpress/?static=1&order=asc  => Check Information leak
 [*] - http://localhost/wordpress/wp-content/plugins/hello.php
 
 [+] -  Enumerating users using wp-json and info leaks
