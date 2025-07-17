@@ -107,7 +107,7 @@ def generatelinks(url):
 	print(f"{progress}ffuf -c -r -recursion -w ~/wordlists/1-100.txt  -u \"{url}/?author=FUZZ\" -mc all -fc 404,403 -o users.out")
 	print(f"{progress}{url}/wp-json/wp/v2/users/1  // bruteforce the last value, some users may be hidden")
 	print(f"{progress}ffuf -c -r -recursion -w ~/wordlists/1-100.txt  -u \"{url}/index.php/wp-json/wp/v2/users/FUZZ\" -mc all -fc 404,403 -o users.out")
-	# print(f"\t{progress}wpscan --api-token 0TXJyMIhsarjk9F3u0tit3ulOnyfjo8dMWGnU2W6liM --url {url}/ --enumerate u")
+
 	
 
 	# USING USERNAME AND BRUTEFORCING NAME
